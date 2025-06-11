@@ -2,7 +2,6 @@ package com.example.supermarket.service;
 
 import com.example.supermarket.model.UserEntity;
 import com.example.supermarket.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,12 +11,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserRepository userRepository;
+    public final UserRepository userRepository;
 
-    @Transactional
     public UserEntity createUser(UserEntity userEntity){
         return userRepository.save(userEntity);
-
     }
 
 }

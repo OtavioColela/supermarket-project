@@ -1,6 +1,5 @@
 package com.example.supermarket.controller;
 
-import com.example.supermarket.dto.UserRequest;
 import com.example.supermarket.model.UserEntity;
 import com.example.supermarket.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +15,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    public UserService userService;
+    public final UserService userService;
 
     @PostMapping
     public UserEntity createUser(@RequestBody UserEntity userEntity){
         return userService.createUser(userEntity);
-
     }
 }

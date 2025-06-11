@@ -1,14 +1,12 @@
 package com.example.supermarket.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.UUID;
 
-@Entity
 @Data
-@Table(name = "tb_user")
+@Entity
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -17,5 +15,4 @@ public class UserEntity {
     private String role;
     private String turn;
     private Float salary;
-
 }
